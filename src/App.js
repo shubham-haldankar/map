@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import 'tachyons';
 
 function App() {
+  const fruits= [{name:'mango',color:'yellow'},{name:'apple',color:'red'},{name:'orange',color:'orange'}]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table border="1" className="center mt6">
+      <tr>
+      <td>fruit_name</td>
+      <td>fruit_color</td>
+      </tr>
+      {
+      fruits.map((item)=>
+        <tr>
+        <td>{item.name}</td>
+        <td>{item.color}</td>
+        </tr>
+      )
+    }
+      </table>
     </div>
   );
 }
